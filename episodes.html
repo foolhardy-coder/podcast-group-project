@@ -11,6 +11,11 @@
     <div class="container-navbar">
       <a href="index.html" class="img-logo"><img src="images/Social-robot-podcast-horizontal-logo-mark.png" alt="Social Robot Podcast Logo"></a>
       <nav role="navigation" class="nav-menu">
+        <div class="burger-menu" style="background-color: blue;">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
         <ul role="list" class="nav-menu-items">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="episodes.html" class="nav-link">Episodes</a></li>
@@ -25,7 +30,7 @@
   <section class="episode-list">
     <div class="container-padded">
       <div class="wrapper-split">
-        <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Episode Image"></div>
+        <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Episode Image" class="episode-image"></div>
         <div class="split">
           <h1>Episode X</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
@@ -34,7 +39,7 @@
       </div>
 
       <div class="wrapper-split">
-        <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Episode Image"></div>
+        <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Episode Image" class="episode-image"></div>
         <div class="split">
           <h1>Episode X</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
@@ -43,7 +48,7 @@
       </div>
 
       <div class="wrapper-split">
-        <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Episode Image"></div>
+        <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Episode Image" class="episode-image"></div>
         <div class="split">
           <h1>Episode X</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
@@ -52,7 +57,7 @@
       </div>
 
       <div class="wrapper-split">
-        <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Episode Image"></div>
+        <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Episode Image" class="episode-image"></div>
         <div class="split">
           <h1>Episode X</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
@@ -71,9 +76,9 @@
         </div>
         <div class="footer-block">
           <div class="title-small">Resources</div>
-          <a class="nav-link" href="#">Stuff 1</a>
-          <a class="nav-link" href="#">Stuff 2</a>
-          <a class="nav-link" href="#">Stuff 3</a>
+          <a class="nav-link" href="#">Link 1</a>
+          <a class="nav-link" href="#">Link 2</a>
+          <a class="nav-link" href="#">Link 3</a>
         </div>
         <div class="footer-block">
           <div class="title-small">About</div>
@@ -85,5 +90,23 @@
     <div class="footer-divider"></div>
     <div class="footer-copyright-center">Copyright © 2025 The Social Robot Podcast</div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.querySelector('.burger-menu');
+      const navLinks = document.querySelector('.nav-menu-items');
+
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      navLinks.addEventListener('transitionend', () => {
+        if (navLinks.classList.contains('active')) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

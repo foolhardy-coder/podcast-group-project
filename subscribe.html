@@ -11,6 +11,11 @@
     <div class="container-navbar">
       <a href="index.html" class="img-logo"><img src="images/Social-robot-podcast-horizontal-logo-mark.png" alt="Social Robot Podcast Logo"></a>
       <nav role="navigation" class="nav-menu">
+        <div class="burger-menu" style="background-color: blue;">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
         <ul role="list" class="nav-menu-items">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="episodes.html" class="nav-link">Episodes</a></li>
@@ -43,9 +48,9 @@
         </div>
         <div class="footer-block">
           <div class="title-small">Resources</div>
-          <a class="nav-link" href="#">Stuff 1</a>
-          <a class="nav-link" href="#">Stuff 2</a>
-          <a class="nav-link" href="#">Stuff 3</a>
+          <a class="nav-link" href="#">Link 1</a>
+          <a class="nav-link" href="#">Link 2</a>
+          <a class="nav-link" href="#">Link 3</a>
         </div>
         <div class="footer-block">
           <div class="title-small">About</div>
@@ -57,5 +62,23 @@
     <div class="footer-divider"></div>
     <div class="footer-copyright-center">Copyright © 2025 The Social Robot Podcast</div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.querySelector('.burger-menu');
+      const navLinks = document.querySelector('.nav-menu-items');
+
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      navLinks.addEventListener('transitionend', () => {
+        if (navLinks.classList.contains('active')) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
