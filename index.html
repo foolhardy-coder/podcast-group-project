@@ -16,19 +16,18 @@
   <header class="site-header">
     <div class="container-navbar">
       <a href="index.html" class="img-logo" aria-label="Home"><img src="images/Social-robot-podcast-horizontal-logo-mark.png" alt="Social Robot Podcast Logo"></a>
-      <nav role="navigation" class="nav-menu" aria-label="Main Navigation">
-        <div class="burger-menu" style="background-color: blue;">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <div class="burger-menu">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <ul role="list" class="nav-menu-items">
+        <ul class="nav-menu-items">
           <li><a href="index.html" aria-current="page" class="nav-link">Home</a></li>
           <li><a href="episodes.html" class="nav-link">Episodes</a></li>
           <li><a href="about-us.html" class="nav-link">About Us</a></li>
           <li><a href="subscribe.html" class="nav-link">Subscribe</a></li>
           <li><a href="contact-us.html" class="nav-link">Contact Us</a></li>
-          <li><a href="login.html" class="nav-link">Login</a></li>
         </ul>
       </nav>
     </div>
@@ -195,11 +194,7 @@
       });
 
       navLinks.addEventListener('transitionend', () => {
-        if (navLinks.classList.contains('active')) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = 'auto';
-        }
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
       });
     });
   </script>

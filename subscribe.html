@@ -10,13 +10,13 @@
   <header class="site-header">
     <div class="container-navbar">
       <a href="index.html" class="img-logo"><img src="images/Social-robot-podcast-horizontal-logo-mark.png" alt="Social Robot Podcast Logo"></a>
-      <nav role="navigation" class="nav-menu">
-        <div class="burger-menu" style="background-color: blue;">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <div class="burger-menu">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <ul role="list" class="nav-menu-items">
+        <ul class="nav-menu-items">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="episodes.html" class="nav-link">Episodes</a></li>
           <li><a href="about-us.html" class="nav-link">About Us</a></li>
@@ -69,14 +69,7 @@
 
       burger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-      });
-
-      navLinks.addEventListener('transitionend', () => {
-        if (navLinks.classList.contains('active')) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = 'auto';
-        }
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
       });
     });
   </script>
