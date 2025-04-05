@@ -1,38 +1,352 @@
+/* ============================
+   Import Fonts
+   ============================ */
+/* Core: Importing the Clash Grotesk font for consistent typography across the site */
 @import url('clash-grotesk.css');
 
+/* ============================
+   Root Variables for Consistency
+   ============================ */
+/* Core: Define reusable variables for colors, typography, spacing, and other design elements */
 :root {
-  --dark-blue: #141b29;
-  --blue: #28638f;
-  --mid-blue: #1f3e5c;
-  --light-blue: #3caedb;
-  --yellow: #ffbb38;
-  --white: #ffffff;
-  --font-family: ClashGrotesk-Regular;
-  --font-size: 20px;
-  --line-height: 1.5;
-  --heading-font-size: 24px;
-  --subheading-font-size: 18px;
-  --paragraph-font-size: 16px;
-  --container-margin: 50px 100px;
-  --container-padding: 20px;
-  --container-padding-mobile: 20px;
-  --image-max-width: 100%;
-  --image-height-auto: auto;
-  --button-icon: '▶';
-  --button-background-color: var(--dark-blue);
-  --button-text-color: var(--white);
-  --button-hover-text-color: var(--yellow);
-  --section-heading-font-size: 38px;
+  /* Colors */
+  --dark-blue: #141b29; /* Core: Primary dark blue color */
+  --blue: #28638f; /* Core: Secondary blue color */
+  --light-blue: #3caedb; /* Optional: Light blue accent color */
+  --yellow: #ffbb38; /* Core: Highlight color for hover effects */
+  --white: #ffffff; /* Core: Background and text color */
+  --gray-dark: #333; /* Optional: Dark gray for text or borders */
+  --gray-darker: #43464d; /* Optional: Darker gray for active states */
+  --light-gray: #f9f9f9; /* Add a variable for light gray */
+  --dark-gray: #333; /* Add a variable for dark gray */
+  --border-color: #ccc; /* Add a variable for border color */
+
+  /* Typography */
+  --font-family: 'ClashGrotesk-Regular', sans-serif; /* Core: Font family */
+  --font-size-base: 16px; /* Core: Base font size */
+  --line-height-base: 1.5; /* Core: Base line height */
+
+  /* Spacing */
+  --container-padding: 20px; /* Core: Default padding for containers */
+  --container-margin: 50px auto; /* Core: Default margin for containers */
+  --container-padding-mobile: 10px; /* Core: Padding for mobile devices */
+
+  /* Buttons */
+  --button-bg: var(--dark-blue); /* Core: Button background color */
+  --button-color: var(--white); /* Core: Button text color */
+  --button-hover-color: var(--yellow); /* Core: Button hover background color */
+
+  /* Font Sizes */
+  --heading-font-size: 2rem; /* Core: Default heading font size */
+  --subheading-font-size: 1.5rem; /* Core: Subheading font size */
+  --paragraph-font-size: 1rem; /* Core: Paragraph font size */
+
+  /* Images */
+  --image-max-width: 100%; /* Core: Maximum image width */
+  --image-height-auto: auto; /* Core: Maintain image aspect ratio */
+}
+
+/* ============================
+   General Reset
+   ============================ */
+/* Core: Reset default browser styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  height: 100%;
-  background-color: var(--white);
-  font-family: var(--font-family);
-  font-size: var(--paragraph-font-size);
-  line-height: var(--line-height);
-  color: var(--dark-blue);
+  font-family: var(--font-family); /* Core: Set default font */
+  font-size: var(--font-size-base); /* Core: Set base font size */
+  line-height: var(--line-height-base); /* Core: Set base line height */
+  color: var(--dark-blue); /* Core: Default text color */
+  background-color: var(--white); /* Core: Default background color */
+}
+
+/* ============================
+   Header Section
+   ============================ */
+/* Core: Styles for the header, including logo and navigation */
+header {
+  background-color: var(--blue); /* Core: Header background color */
+  padding: var(--container-padding); /* Core: Header padding */
+  display: flex;
+  justify-content: space-between; /* Core: Space between logo and navigation */
+  align-items: center; /* Core: Vertically align items */
+}
+
+header .img-logo img {
+  max-width: 200px; /* Core: Logo maximum width */
+  height: auto; /* Core: Maintain aspect ratio */
+}
+
+.container-navbar {
+  display: flex; /* Core: Flexbox for layout */
+  justify-content: space-between; /* Core: Space between logo and nav menu */
+  align-items: center; /* Core: Vertically align items */
+  max-width: 1200px; /* Core: Limit container width */
+  width: 100%; /* Core: Full width */
+  margin: 0 auto; /* Core: Center the container */
+  padding: var(--container-padding); /* Consistent padding */
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex; /* Core: Flexbox for navigation */
+  justify-content: flex-end; /* Core: Align navigation to the right */
+  align-items: center; /* Core: Vertically align items */
+}
+
+.nav-menu-items {
+  display: flex; /* Core: Flexbox for menu items */
+  list-style: none; /* Core: Remove default list styling */
+  gap: 15px; /* Core: Add spacing between menu items */
+}
+
+.nav-menu-items.active {
+  display: flex; /* Core: Show menu when active */
+}
+
+.nav-link {
+  color: var(--white); /* Core: Link text color */
+  text-decoration: none; /* Core: Remove underline */
+  padding: 5px 10px; /* Core: Add padding around links */
+  font-size: var(--subheading-font-size); /* Core: Set font size */
+  transition: color 0.3s; /* Core: Smooth hover effect */
+  text-transform: uppercase; /* Apply uppercase text directly */
+  font-weight: bold; /* Apply bold text directly */
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #ffd700; /* Adjusted to a more accessible yellow */
+}
+
+/* Burger Menu */
+.burger-menu {
+  display: none; /* Core: Hide burger menu by default */
+  flex-direction: column; /* Core: Stack burger lines vertically */
+  justify-content: space-between; /* Core: Space between burger lines */
+  width: 30px; /* Added 'px' unit */
+  height: 21px; /* Added 'px' unit */
+  cursor: pointer; /* Core: Change cursor to pointer */
+}
+
+.burger-menu div {
+  width: 100%; /* Core: Full width for burger lines */
+  height: 3px; /* Core: Set line height */
+  background-color: var(--white); /* Core: Line color */
+  border-radius: 10px; /* Optional: Round the edges */
+}
+
+/* ============================
+   Main Content
+   ============================ */
+/* Core: General container styles for main content */
+.container-padded {
+  padding: var(--container-padding); /* Core: Add padding */
+  margin: var(--container-margin); /* Core: Add margin */
+  max-width: 1200px; /* Core: Limit container width */
+  padding: var(--container-padding); /* Ensure consistent padding */
+}
+
+h1, h2, h3 {
+  margin-bottom: 20px; /* Core: Add spacing below headings */
+  color: var(--dark-blue); /* Core: Heading text color */
+}
+
+h1 {
+  font-size: 2.5rem; /* Core: Main heading font size */
+  margin: 20px 0; /* Core: Add vertical spacing */
+  font-weight: bold; /* Core: Bold text */
+  line-height: 1.2; /* Core: Adjust line spacing */
+}
+
+h2 {
+  font-size: var(--subheading-font-size); /* Core: Subheading font size */
+}
+
+p {
+  margin-bottom: 20px; /* Core: Add spacing below paragraphs */
+  font-size: var(--paragraph-font-size); /* Core: Paragraph font size */
+}
+
+/* ============================
+   Buttons
+   ============================ */
+/* Core: General button styles */
+.btn {
+  background-color: var(--button-bg); /* Core: Button background color */
+  color: var(--button-color); /* Core: Button text color */
+  border: none; /* Core: Remove border */
+  padding: 10px 20px; /* Core: Add padding */
+  cursor: pointer; /* Core: Change cursor to pointer */
+  border-radius: 4px; /* Core: Round the corners */
+  font-size: var(--font-size-base); /* Core: Set font size */
+  text-transform: uppercase; /* Core: Uppercase text */
+  transition: all 0.2s; /* Core: Smooth hover effect */
+}
+
+.btn:hover {
+  background-color: var(--button-hover-color); /* Core: Change background on hover */
+}
+
+.btn:active {
+  background-color: var(--gray-darker); /* Optional: Change background on active state */
+}
+
+.button-primary {
+  color: var(--white); /* Core: Text color */
+  background-color: var(--dark-blue); /* Core: Background color */
+  padding: 12px 25px; /* Core: Add padding */
+  font-size: var(--font-size-base); /* Replaced '14px' with variable */
+  text-transform: uppercase; /* Core: Uppercase text */
+  border: none; /* Core: Remove border */
+  border-radius: 4px; /* Core: Round the corners */
+  cursor: pointer; /* Core: Change cursor to pointer */
+  display: inline-flex; /* Core: Align content properly */
+  align-items: center; /* Core: Center content vertically */
+  justify-content: center; /* Core: Center content horizontally */
+  text-decoration: none; /* Core: Remove underline */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Core: Smooth hover effect */
+}
+
+.button-primary:hover {
+  background-color: var(--yellow); /* Core: Change background on hover */
+  color: var(--dark-blue); /* Core: Change text color on hover */
+}
+
+.button-primary:active {
+  background-color: var(--gray-darker); /* Optional: Change background on active state */
+}
+
+.button-primary::after {
+  content: '→'; /* Optional: Add arrow icon */
+  margin-left: 10px; /* Optional: Add spacing before arrow */
+}
+
+/* ============================
+   Images
+   ============================ */
+/* Core: General image styles */
+.img-responsive {
+  width: 100%; /* Core: Full width */
+  height: auto; /* Core: Maintain aspect ratio */
+  object-fit: contain; /* Core: Ensure image fits within container */
+}
+
+.img-circle {
+  aspect-ratio: 1 / 1; /* Core: Force square aspect ratio */
+  object-fit: cover; /* Core: Ensure image covers container */
+  border-radius: 50%; /* Core: Make image circular */
+}
+
+/* ============================
+   Footer Section
+   ============================ */
+/* Core: Styles for the footer */
+footer {
+  background-color: var(--blue); /* Core: Footer background color */
+  color: var(--white); /* Core: Footer text color */
+  text-align: center; /* Core: Center text */
+  padding: var(--container-padding); /* Core: Add padding */
+}
+
+.footer-content {
+  display: grid; /* Core: Grid layout for footer content */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Core: Responsive grid */
+  gap: 20px; /* Core: Add spacing between grid items */
+}
+
+.footer-divider {
+  background-color: var(--dark-blue); /* Core: Divider color */
+  height: 1px; /* Core: Divider height */
+  margin: 20px 0; /* Core: Add spacing around divider */
+}
+
+.footer-block {
+  display: flex; /* Core: Flexbox for footer blocks */
+  flex-direction: column; /* Core: Stack items vertically */
+  align-items: flex-start; /* Core: Align items to the left */
+}
+
+.title-small {
+  font-weight: bold; /* Core: Bold text */
+  letter-spacing: 1px; /* Core: Add spacing between letters */
+  text-transform: uppercase; /* Core: Uppercase text */
+  margin-bottom: 12px; /* Core: Add spacing below title */
+  font-size: var(--subheading-font-size); /* Core: Set font size */
+  color: var(--white); /* Core: Text color */
+}
+
+/* ============================
+   Responsive Design
+   ============================ */
+/* Core: Styles for smaller screens */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Core: Hide navigation menu */
+  }
+
+  .burger-menu {
+    display: flex; /* Core: Show burger menu */
+  }
+
+  .nav-menu-items.active {
+    display: flex; /* Core: Show menu when active */
+    flex-direction: column; /* Core: Stack menu items vertically */
+    gap: 10px; /* Core: Add spacing between items */
+    background-color: var(--blue); /* Core: Background color */
+    position: absolute; /* Core: Position menu */
+    top: 60px; /* Core: Position below header */
+    right: 0; /* Core: Align to the right */
+    padding: 10px; /* Core: Add padding */
+    width: 100%; /* Core: Full width */
+  }
+
+  .container-padded {
+    padding: var(--container-padding-mobile); /* Core: Adjust padding for mobile */
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr; /* Core: Single column layout for footer */
+  }
+
+  .scroll-item {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .scroll-item img {
+    width: 80%;
+  }
+
+  .scroll-item .item-text {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .social-logo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .scroll-arrow {
+    width: 10%; /* Adjust for smaller screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .nav-menu-items {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 ul > li {
@@ -45,9 +359,10 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 38px;
-  font-weight: bold;
-  line-height: 44px;
+  font-size: 2.5rem; /* Adjust the font size as needed */
+  margin: 20px 0; /* Adds vertical spacing */
+  font-weight: bold; /* Ensures the heading stands out */
+  line-height: 1.2; /* Adjusts line spacing for readability */
 }
 
 p {
@@ -66,29 +381,16 @@ img {
   height: auto;
 }
 
-.container-navbar {
-  background-color: var(--blue);
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 80px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .nav-menu {
-  justify-content: flex-end;
-  align-items: center;
+  margin-left: auto; /* Pushes the nav menu to the right */
   display: flex;
+  align-items: center;
 }
 
 .nav-menu-items {
   display: flex;
   flex-direction: row;
   background-color: var(--blue);
-}
-
-.nav-menu-items.active {
-  display: flex;
 }
 
 .nav-link {
@@ -135,34 +437,32 @@ img {
 }
 
 .button-primary {
-  color: var(--button-text-color);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background-color: var(--button-background-color);
-  padding: 12px 25px;
-  font-size: 12px;
-  line-height: 20px;
-  transition: all .2s;
-  border: none;
-  cursor: pointer;
-  height: 42px;
-  border-radius: 0 4px 4px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+  color: var(--white); /* Text color */
+  background-color: var(--dark-blue); /* Button background color */
+  padding: 12px 25px; /* Padding for the button */
+  font-size: var(--font-size-base); /* Replaced '14px' with variable */
+  text-transform: uppercase; /* Uppercase text */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: inline-flex; /* Aligns content properly */
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  text-decoration: none; /* Removes underline for links */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
 }
 
 .button-primary:hover {
-  color: var(--button-hover-text-color);
+  background-color: var(--yellow); /* Hover background color */
+  color: var(--dark-blue); /* Hover text color */
 }
 
 .button-primary:active {
-  background-color: #43464d;
+  background-color: var(--gray-darker); /* Active state background color */
 }
 
 .button-primary::after {
-  content: var(--button-icon);
+  content: '→';
   margin-left: 10px;
 }
 
@@ -173,61 +473,74 @@ img {
 
 .scroll-container {
   display: flex;
-  gap: 10%;
-  overflow: hidden;
+  align-items: center;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 100%;
 }
 
 .scroll-arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
+  top: 50%; /* Centers the button vertically */
+  transform: translateY(-50%); /* Adjusts for perfect vertical centering */
+  font-size: 2rem; /* Adjust the size of the arrow */
   cursor: pointer;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 10px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  z-index: 1; /* Ensures the buttons are above the scroll items */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white; /* Arrow color */
+  border: none; /* Removes default button border */
+  border-radius: 50%; /* Makes the button circular */
+  width: 5%; /* Use percentage for responsiveness */
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Use a darker background for better contrast */
 }
 
 .left-arrow {
-  left: 10px;
+  left: 10px; /* Positions the left button */
 }
 
 .right-arrow {
-  right: 10px;
+  right: 10px; /* Positions the right button */
 }
 
 .scroll-item {
+  flex: 0 0 100%; /* Makes each scroll item take up the full width of the container */
+  scroll-snap-align: start; /* Ensures each item snaps to the start of the container */
   display: flex;
   align-items: center;
-  width: 100vw;
-  text-align: left;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-  max-width: 100%;
-}
-
-.scroll-item .split {
-  flex: 1 1 45%;
-  max-width: 45%;
-  margin: 10px;
+  justify-content: space-between; /* Ensures image and text are spaced apart */
+  box-sizing: border-box;
+  padding: 20px; /* Adds padding inside each scroll item */
+  gap: 20px; /* Adds a gap between the image and text */
 }
 
 .scroll-item img {
-  width: 50%;
+  flex: 0 0 30%; /* Allocates 30% of the width to the image */
+  max-width: 30%; /* Ensures the image doesn't exceed 30% of the width */
   height: auto;
 }
 
-.item-text {
-  width: 100%;
-  padding-left: 40px;
-  margin-left: 20px;
+.scroll-item .item-text {
+  flex: 0 0 60%; /* Allocates 60% of the width to the text */
+  padding-left: 20px; /* Adds spacing between the image and text */
+}
+
+.scroll-item-image {
+  flex: 0 0 30%; /* Allocates 30% of the width to the image */
+  max-width: 30%; /* Ensures the image doesn't exceed 30% of the width */
+  height: auto;
+}
+
+.scroll-item-text {
+  flex: 0 0 60%; /* Allocates 60% of the width to the text */
+  text-align: left; /* Ensures the text is aligned to the left */
 }
 
 .subscribe .subscribe-image {
@@ -264,7 +577,6 @@ img {
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 12px;
-  font-size: 14px;
   font-weight: 700;
   line-height: 16px;
   color: var(--white);
@@ -294,7 +606,7 @@ img {
 .info-card {
   text-align: center;
   background-color: transparent;
-  max-width: 60%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -358,6 +670,10 @@ img {
   height: 3px;
   background-color: #333;
   border-radius: 10px;
+}
+
+.centered-text {
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
@@ -468,4 +784,283 @@ img {
     display: flex;
     flex-direction: row;
   }
+}
+
+img {
+  width: 100%; /* Ensures the image spans the full width of its container */
+  height: auto; /* Maintains the aspect ratio */
+  object-fit: contain; /* Ensures the image fits within its container without distortion */
+}
+
+.info-card img {
+  width: 100%; /* Ensures the image spans the full width of its container */
+  height: auto; /* Maintains the aspect ratio */
+  aspect-ratio: 1 / 1; /* Forces a 1:1 aspect ratio */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  border-radius: 50%; /* Makes the image circular */
+}
+
+.scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center; /* Vertically aligns the buttons with the scroll container */
+}
+
+.scroll-container {
+  overflow-x: scroll; /* Enables horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Ensures smooth snapping to each item */
+  display: flex;
+  width: 100%; /* Makes the container span the full width */
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%; /* Centers the button vertically */
+  transform: translateY(-50%); /* Adjusts for perfect vertical centering */
+  font-size: 2rem; /* Adjust the size of the arrow */
+  cursor: pointer;
+  z-index: 1; /* Ensures the buttons are above the scroll items */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white; /* Arrow color */
+  border: none; /* Removes default button border */
+  border-radius: 50%; /* Makes the button circular */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Use a darker background for better contrast */
+}
+
+.left-arrow {
+  margin-right: 10px; /* Adds spacing between the button and the scroll container */
+}
+
+.right-arrow {
+  margin-left: 10px; /* Adds spacing between the button and the scroll container */
+}
+
+.scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center; /* Vertically aligns the buttons with the scroll container */
+}
+
+.scroll-container {
+  overflow-x: scroll; /* Enables horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Ensures smooth snapping to each item */
+  display: flex;
+  width: 100%; /* Makes the container span the full width */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%; /* Centers the button vertically */
+  transform: translateY(-50%); /* Adjusts for perfect vertical centering */
+  font-size: 2rem; /* Adjust the size of the arrow */
+  cursor: pointer;
+  z-index: 1; /* Ensures the buttons are above the scroll items */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white; /* Arrow color */
+  border: none; /* Removes default button border */
+  border-radius: 50%; /* Makes the button circular */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Use a darker background for better contrast */
+}
+
+.left-arrow {
+  left: -60px; /* Positions the left button outside the container */
+}
+
+.right-arrow {
+  right: -60px; /* Positions the right button outside the container */
+}
+
+.episode-item {
+  display: flex; /* Makes the image and details appear side by side */
+  align-items: center; /* Vertically aligns the content */
+  gap: 20px; /* Adds space between the image and details */
+  margin-bottom: 20px; /* Adds spacing between episode items */
+  padding: 20px; /* Adds padding inside the episode item */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+  border-radius: 8px; /* Optional: Rounds the corners */
+  background-color: var(--light-gray); /* Replace hardcoded value */
+  flex: 0 0 100%; /* Each item takes up the full width of the container */
+  scroll-snap-align: start; /* Snap to the start of the container */
+}
+
+.episode-image {
+  flex: 0 0 30%; /* Allocates 30% of the width to the image */
+  max-width: 30%; /* Ensures the image doesn't exceed 30% of the container */
+  height: auto; /* Maintains the aspect ratio */
+  object-fit: cover; /* Ensures the image fits within its container */
+  border-radius: 8px; /* Optional: Rounds the corners of the image */
+}
+
+.episode-details {
+  flex: 1; /* Allocates the remaining space to the details */
+  text-align: left; /* Aligns the text to the left */
+}
+
+.team-card {
+  padding: 20px; /* Equivalent to .padded */
+  border-radius: 8px; /* Equivalent to .rounded */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Equivalent to .shadow */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-form {
+  display: flex; /* Enables Flexbox for the form */
+  flex-wrap: wrap; /* Allows wrapping of items if they don't fit in one row */
+  gap: 20px; /* Adds spacing between form elements */
+  justify-content: space-between; /* Distributes items evenly across the container */
+}
+
+.contact-form label {
+  flex: 1 1 100%; /* Ensures labels take up the full width */
+  margin-bottom: 5px; /* Adds spacing below the label */
+}
+
+.contact-form input,
+.contact-form textarea {
+  flex: 1 1 calc(50% - 20px); /* Each input/textarea takes up 50% of the width minus the gap */
+  padding: 10px; /* Adds padding inside the input/textarea */
+  border: 1px solid var(--border-color); /* Replace hardcoded value */
+  border-radius: 4px; /* Rounds the corners */
+  font-size: 16px; /* Sets the font size */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.contact-form textarea {
+  flex: 1 1 100%; /* Textarea spans the full width */
+  height: 100px; /* Sets a fixed height for the textarea */
+}
+
+.contact-form button {
+  flex: 1 1 100%; /* Button spans the full width */
+  margin-top: 10px; /* Adds spacing above the button */
+}
+
+.audio-player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--dark-gray); /* Replace hardcoded value */
+  color: #fff;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.audio {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+/* Add utility classes for common styles */
+.uppercase-text {
+  text-transform: uppercase; /* Utility: Uppercase text */
+}
+
+.bold-text {
+  font-weight: bold; /* Utility: Bold text */
+}
+
+.centered-content {
+  display: flex; /* Utility: Flexbox for centering */
+  justify-content: center; /* Utility: Center horizontally */
+  align-items: center; /* Utility: Center vertically */
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.padded {
+  padding: 20px;
+}
+
+.shadow {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply utility classes where applicable */
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: var(--subheading-font-size);
+  transition: color 0.3s;
+  text-transform: uppercase; /* Utility: Uppercase text */
+  font-weight: bold; /* Utility: Bold text */
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #ffd700; /* Adjusted to a more accessible yellow */
+}
+.nav-link {
+  text-transform: uppercase; /* Utility: Uppercase text */
+  font-weight: bold; /* Utility: Bold text */
+}
+
+/* Add styles for the audio player and name display */
+#audio-player-container {
+  background-color: var(--dark-blue); /* Dark blue background */
+  color: var(--yellow); /* Yellow text */
+  padding: 10px; /* Add padding for spacing */
+  text-align: center; /* Center the text */
+}
+
+#audio-file-name {
+  color: var(--yellow); /* Yellow text for the file name */
+  font-size: 16px; /* Adjust font size */
+  margin-bottom: 5px; /* Add spacing below the file name */
+}
+
+#audio-player {
+  width: 100%; /* Full width for the audio player */
+  background-color: var(--dark-blue); /* Dark blue background for controls */
+  color: white; /* Set the text color to white */
+  text-align: left; /* Align the text to the left */
+}
+
+#audio-player::-webkit-slider-thumb {
+  background-color: var(--yellow); /* Yellow slider thumb */
+}
+
+#audio-player::-moz-range-thumb {
+  background-color: var(--yellow); /* Yellow slider thumb for Firefox */
+}
+
+#audio-player::-ms-thumb {
+  background-color: var(--yellow); /* Yellow slider thumb for Edge */
 }

@@ -4,129 +4,111 @@
   <meta charset="utf-8">
   <title>About Us</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn more about The Social Robot Podcast and our team.">
+  <meta property="og:title" content="The Social Robot Podcast">
+  <meta property="og:description" content="Learn more about The Social Robot Podcast and our team.">
+  <meta property="og:image" content="images/Social-robot-podcast-horizontal-logo-mark.png">
+  <meta property="og:url" content="https://www.socialrobotpodcast.com/about-us.html">
   <link href="css/group-project-standard.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
-<body class="body">
+<body>
   <header class="site-header">
     <div class="container-navbar">
-      <a href="index.html" class="img-logo"><img src="images/Social-robot-podcast-horizontal-logo-mark.png" alt="Social Robot Podcast Logo"></a>
-      <nav role="navigation" class="nav-menu">
-        <div class="burger-menu" style="background-color: blue;">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+      <a href="index.html" class="img-logo" aria-label="Home">
+        <img src="images/Social-robot-podcast-horizontal-logo-mark.png" alt="Social Robot Podcast Logo">
+      </a>
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <div class="burger-menu" aria-label="Toggle Navigation">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <ul role="list" class="nav-menu-items">
-          <li><a href="index.html" aria-current="page" class="nav-link">Home</a></li>
+        <ul class="nav-menu-items">
+          <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="episodes.html" class="nav-link">Episodes</a></li>
-          <li><a href="about-us.html" class="nav-link">About Us</a></li>
+          <li><a href="about-us.html" aria-current="page" class="nav-link">About Us</a></li>
           <li><a href="subscribe.html" class="nav-link">Subscribe</a></li>
           <li><a href="contact-us.html" class="nav-link">Contact Us</a></li>
-          <li><a href="login.html" class="nav-link">Login</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <section class="about-podcast">
-    <div class="container-padded">
-      <h1 class="section-heading">About the Podcast</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum. Curabitur ac felis nec erat tincidunt bibendum. Nulla facilisi. Proin ac orci nec justo tincidunt tincidunt. Sed at libero nec orci vehicula tincidunt. Donec vel sapien nec libero fermentum tincidunt. Integer at libero nec justo tincidunt tincidunt. Sed at libero nec orci vehicula tincidunt. Donec vel sapien nec libero fermentum tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque sagittis turpis scelerisque odio sagittis condimentum. Nunc porttitor, quam sed consectetur lobortis, urna nisi eleifend orci, ac faucibus risus risus vitae eros. Proin dapibus imperdiet semper. Sed id elementum ipsum, vel accumsan velit. Morbi ullamcorper dolor.</p>
-    </div>
-  </section>
-  <section class="our-team" style="padding-bottom: 20px;">
-    <div class="container-padded">
-      <h2 class="section-heading centered-heading">Our Team</h2>
-      <div class="grid-layout centered-content">
-        <div class="team-card centered-content">
-          <img src="images/Placeholder_view_vector.svg.png" class="profile-image" alt="Profile Image">
-          <div>
-            <h3 class="name-main-heading">Bob Marley</h3>
-            <div>Podcast Host</div>
-          </div>
-          <p class="margin-bottom-large">“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.”</p>
-          <div class="div-block centered-content">
-            <img src="images/LinkedIn_icon.svg.png" class="social-icon" alt="LinkedIn Icon">
-            <img src="images/2023_Facebook_icon.svg.png" class="social-icon" alt="Facebook Icon">
-          </div>
-        </div>
-        <div class="team-card centered-content">
-          <img src="images/Placeholder_view_vector.svg.png" class="profile-image" alt="Profile Image">
-          <div>
-            <h3 class="name-main-heading">Jane Doe</h3>
-            <div>Head of Production</div>
-          </div>
-          <p class="margin-bottom-large">“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.”</p>
-          <div class="div-block centered-content">
-            <img src="images/LinkedIn_icon.svg.png" class="social-icon" alt="LinkedIn Icon">
-            <img src="images/2023_Facebook_icon.svg.png" class="social-icon" alt="Facebook Icon">
-          </div>
-        </div>
-        <div class="team-card centered-content">
-          <img src="images/Placeholder_view_vector.svg.png" class="profile-image" alt="Profile Image">
-          <div>
-            <h3 class="name-main-heading">John Doe</h3>
-            <div>Social Media Manager</div>
-          </div>
-          <p class="margin-bottom-large">“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.”</p>
-          <div class="div-block centered-content">
-            <img src="images/LinkedIn_icon.svg.png" class="social-icon" alt="LinkedIn Icon">
-            <img src="images/2023_Facebook_icon.svg.png" class="social-icon" alt="Facebook Icon">
-          </div>
+  <main>
+    <section class="about-podcast">
+      <div class="container-padded">
+        <h1 class="centered-text">About the Podcast</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
+      </div>
+    </section>
+    <section class="our-team">
+      <div class="container-padded">
+        <h2 class="centered-text">Our Team</h2>
+        <div class="grid-layout">
+          <article class="team-card">
+            <img src="images/Placeholder_view_vector.svg.png" alt="Bob Marley Profile Image" class="profile-image">
+            <div>
+              <h3>Bob Marley</h3>
+              <p>Podcast Host</p>
+            </div>
+            <p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.”</p>
+            <div class="social-icons">
+              <img src="images/LinkedIn_icon.svg.png" alt="LinkedIn Icon" class="small-icon">
+              <img src="images/2023_Facebook_icon.svg.png" alt="Facebook Icon" class="small-icon">
+            </div>
+          </article>
+          <article class="team-card">
+            <img src="images/Placeholder_view_vector.svg.png" alt="Jane Doe Profile Image" class="profile-image">
+            <div>
+              <h3>Jane Doe</h3>
+              <p>Head of Production</p>
+            </div>
+            <p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.”</p>
+            <div class="social-icons">
+              <img src="images/LinkedIn_icon.svg.png" alt="LinkedIn Icon" class="small-icon">
+              <img src="images/2023_Facebook_icon.svg.png" alt="Facebook Icon" class="small-icon">
+            </div>
+          </article>
+          <article class="team-card">
+            <img src="images/Placeholder_view_vector.svg.png" alt="John Doe Profile Image" class="profile-image">
+            <div>
+              <h3>John Doe</h3>
+              <p>Social Media Manager</p>
+            </div>
+            <p>“Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.”</p>
+            <div class="social-icons">
+              <img src="images/LinkedIn_icon.svg.png" alt="LinkedIn Icon" class="small-icon">
+              <img src="images/2023_Facebook_icon.svg.png" alt="Facebook Icon" class="small-icon">
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="follow-socials">
-    <div class="container-padded centered-content">
-      <h2 class="socials-title">Follow Our Socials</h2>
-      <div class="socials-wrapper centered-content">
-        <img src="images/Instagram_logo.svg.png" class="social-icon small-social-icon" alt="Instagram Logo">
-        <img src="images/Facebook_Logo_2019.svg.png" class="social-icon small-social-icon" alt="Facebook Logo">
-        <img src="images/YouTube_Logo_2017.svg.png" class="social-icon small-social-icon" alt="YouTube Logo">
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
   <footer class="page-footer">
     <div class="container-padded">
       <div class="footer-content">
         <div class="footer-block">
-          <div class="title-small">Contact Us</div>
-          <a class="nav-link" href="#">Email</a>
-          <a class="nav-link" href="#">Social Media</a>
+          <h4 class="title-small">Contact Us</h4>
+          <a href="#" class="nav-link">Email</a>
+          <a href="#" class="nav-link">Social Media</a>
         </div>
         <div class="footer-block">
-          <div class="title-small">Resources</div>
-          <a class="nav-link" href="#">Link 1</a>
-          <a class="nav-link" href="#">Link 2</a>
-          <a class="nav-link" href="#">Link 3</a>
+          <h4 class="title-small">Resources</h4>
+          <a href="#" class="nav-link">Link 1</a>
+          <a href="#" class="nav-link">Link 2</a>
+          <a href="#" class="nav-link">Link 3</a>
         </div>
         <div class="footer-block">
-          <div class="title-small">About</div>
+          <h4 class="title-small">About</h4>
           <a href="#" class="nav-link">Terms &amp; Conditions</a>
-          <a href="#" class="nav-link">Privacy policy</a>
+          <a href="#" class="nav-link">Privacy Policy</a>
         </div>
       </div>
     </div>
     <div class="footer-divider"></div>
-    <div class="footer-copyright-center">Copyright © 2025 The Social Robot Podcast</div>
+    <p>&copy; 2025 The Social Robot Podcast</p>
   </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const burger = document.querySelector('.burger-menu');
-      const navLinks = document.querySelector('.nav-menu-items');
-
-      burger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-      });
-
-      navLinks.addEventListener('transitionend', () => {
-        if (navLinks.classList.contains('active')) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = 'auto';
-        }
-      });
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

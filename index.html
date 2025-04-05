@@ -12,12 +12,14 @@
   <link href="css/group-project-standard.css" rel="stylesheet" type="text/css">
   <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
-<body class="body">
+<body>
   <header class="site-header">
     <div class="container-navbar">
-      <a href="index.html" class="img-logo" aria-label="Home"><img src="images/Social-robot-podcast-horizontal-logo-mark.png" alt="Social Robot Podcast Logo"></a>
+      <a href="index.html" class="img-logo" aria-label="Home">
+        <img src="images/Social-robot-podcast-horizontal-logo-mark.png" alt="Social Robot Podcast Logo">
+      </a>
       <nav class="nav-menu" aria-label="Main Navigation">
-        <div class="burger-menu">
+        <div class="burger-menu" aria-label="Toggle Navigation">
           <div></div>
           <div></div>
           <div></div>
@@ -32,171 +34,130 @@
       </nav>
     </div>
   </header>
-  <section class="latest-episodes">
-    <div class="container-padded">
-      <div class="scroll-arrow left-arrow" onclick="scrollLeft()" aria-label="Scroll Left">&#9664;</div>
-      <div class="scroll-container">
-        <div class="scroll-item">
-          <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Item Image" class="centered-image scroll-item-image"></div>
-          <div class="split item-text">
-            <h3>Episode 3</h3>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque sagittis turpis scelerisque odio sagittis condimentum. Nunc porttitor, quam sed consectetur lobortis, urna nisi eleifend orci, ac faucibus risus risus vitae eros. Proin dapibus imperdiet semper. Sed id elementum ipsum, vel accumsan velit. Morbi ullamcorper dolor.</p>
+  <main>
+    <section class="latest-episodes">
+      <div class="container-padded">
+        <h2 class="centered-text">Latest Episodes</h2>
+        <div class="scroll-wrapper">
+          <button class="scroll-arrow left-arrow">
+            &#9664; <!-- Left arrow icon -->
+          </button>
+          <div class="scroll-container">
+            <div class="scroll-item">
+              <img src="images/Placeholder_view_vector.svg.png" alt="Episode 3 Image" class="scroll-item-image">
+              <div class="scroll-item-text">
+                <h3>Episode 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div class="scroll-item">
+              <img src="images/Placeholder_view_vector.svg.png" alt="Episode 2 Image" class="scroll-item-image">
+              <div class="scroll-item-text">
+                <h3>Episode 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div class="scroll-item">
+              <img src="images/Placeholder_view_vector.svg.png" alt="Episode 1 Image" class="scroll-item-image">
+              <div class="scroll-item-text">
+                <h3>Episode 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
           </div>
+          <button class="scroll-arrow right-arrow">
+            &#9654; <!-- Right arrow icon -->
+          </button>
         </div>
-        <div class="scroll-item">
-          <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Item Image" class="centered-image scroll-item-image"></div>
-          <div class="split item-text">
-            <h3>Episode 2</h3>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque sagittis turpis scelerisque odio sagittis condimentum. Nunc porttitor, quam sed consectetur lobortis, urna nisi eleifend orci, ac faucibus risus risus vitae eros. Proin dapibus imperdiet semper. Sed id elementum ipsum, vel accumsan velit. Morbi ullamcorper dolor.</p>
+      </div>
+    </section>
+    <section class="about-us">
+      <div class="container-padded">
+        <h2 class="centered-text">About Us</h2>
+        <div class="grid-layout">
+          <div class="info-card">
+            <img src="images/Placeholder_view_vector.svg.png" alt="Profile Image" style="width: 60%; height: auto; border-radius: 50%; object-fit: cover;">
+            <div class="info-name">Bob Marley</div>
+            <div>Podcast Host</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros.</p>
+            <div>
+              <img src="images/LinkedIn_icon.svg.png" alt="LinkedIn Icon" style="width: 48px; height: 48px;">
+              <img src="images/2023_Facebook_icon.svg.png" alt="Facebook Icon" style="width: 48px; height: 48px;">
+            </div>
           </div>
-        </div>
-        <div class="scroll-item">
-          <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Item Image" class="centered-image scroll-item-image"></div>
-          <div class="split item-text">
-            <h3>Episode 1</h3>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque sagittis turpis scelerisque odio sagittis condimentum. Nunc porttitor, quam sed consectetur lobortis, urna nisi eleifend orci, ac faucibus risus risus vitae eros. Proin dapibus imperdiet semper. Sed id elementum ipsum, vel accumsan velit. Morbi ullamcorper dolor.</p>
+          <div class="info-card">
+            <img src="images/Placeholder_view_vector.svg.png" alt="Profile Image" style="width: 60%; height: auto; border-radius: 50%; object-fit: cover;">
+            <div class="info-name">Jane Doe</div>
+            <div>Head of Production</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros.</p>
+            <div>
+              <img src="images/LinkedIn_icon.svg.png" alt="LinkedIn Icon" style="width: 48px; height: 48px;">
+              <img src="images/2023_Facebook_icon.svg.png" alt="Facebook Icon" style="width: 48px; height: 48px;">
+            </div>
+          </div>
+          <div class="info-card">
+            <img src="images/Placeholder_view_vector.svg.png" alt="Profile Image" style="width: 60%; height: auto; border-radius: 50%; object-fit: cover;">
+            <div class="info-name">John Doe</div>
+            <div>Social Media Manager</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros.</p>
+            <div>
+              <img src="images/LinkedIn_icon.svg.png" alt="LinkedIn Icon" style="width: 48px; height: 48px;">
+              <img src="images/2023_Facebook_icon.svg.png" alt="Facebook Icon" style="width: 48px; height: 48px;">
+            </div>
           </div>
         </div>
       </div>
-      <div class="scroll-arrow right-arrow" onclick="scrollRight()" aria-label="Scroll Right">&#9654;</div>
-    </div>
-  </section>
-  <section class="about-us">
-    <div class="container-padded">
-      <h2 class="centered-heading">About Us</h2>
-      <p class="centered-subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem.</p>
-      <div class="grid-layout">
-        <div class="info-card">
-          <img src="images/Placeholder_view_vector.svg.png" class="profile-image centered-image" alt="Profile Image">
-          <div class="info-name">Bob Marley</div>
-          <div>Podcast Host</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros.</p>
-          <div class="div-block">
-            <img src="images/LinkedIn_icon.svg.png" class="social-icon small-icon" alt="LinkedIn Icon">
-            <img src="images/2023_Facebook_icon.svg.png" class="social-icon small-icon" alt="Facebook Icon">
-          </div>
-        </div>
-        <div class="info-card">
-          <img src="images/Placeholder_view_vector.svg.png" class="profile-image centered-image" alt="Profile Image">
-          <div class="info-name">Jane Doe</div>
-          <div>Head of Production</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros.</p>
-          <div class="div-block">
-            <img src="images/LinkedIn_icon.svg.png" class="social-icon small-icon" alt="LinkedIn Icon">
-            <img src="images/2023_Facebook_icon.svg.png" class="social-icon small-icon" alt="Facebook Icon">
-          </div>
-        </div>
-        <div class="info-card">
-          <img src="images/Placeholder_view_vector.svg.png" class="profile-image centered-image" alt="Profile Image">
-          <div class="info-name">John Doe</div>
-          <div>Social Media Manager</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros.</p>
-          <div class="div-block">
-            <img src="images/LinkedIn_icon.svg.png" class="social-icon small-icon" alt="LinkedIn Icon">
-            <img src="images/2023_Facebook_icon.svg.png" class="social-icon small-icon" alt="Facebook Icon">
+    </section>
+    <section class="subscribe">
+      <div class="container-padded">
+        <div class="wrapper-split">
+          <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Subscribe Image" style="margin: 0 auto; width: 50%;"></div>
+          <div class="split">
+            <h1>Subscribe for Updates</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
+            <form class="subscribe-form">
+              <input type="email" placeholder="Enter your email address" class="email-input" required>
+              <button type="submit" class="button-primary">Subscribe</button>
+            </form>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="subscribe">
-    <div class="container-padded">
-      <div class="wrapper-split">
-        <div class="split"><img src="images/Placeholder_view_vector.svg.png" alt="Subscribe Image" class="subscribe-image centered-image"></div>
-        <div class="split">
-          <h1>Subscribe for Updates</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
-          <form class="subscribe-form">
-            <input type="email" placeholder="Enter your email address" class="email-input" required>
-            <button type="submit" class="button-primary">Subscribe</button>
-          </form>
+    </section>
+    <section class="follow-socials">
+      <div class="container-padded centered-socials">
+        <h2 class="socials-title">Follow Our Socials</h2>
+        <div class="socials-wrapper">
+          <img src="images/Instagram_logo.svg.png" class="social-logo" alt="Instagram Logo">
+          <img src="images/Facebook_Logo_2019.svg.png" class="social-logo" alt="Facebook Logo">
+          <img src="images/YouTube_Logo_2017.svg.png" class="social-logo" alt="YouTube Logo">
         </div>
       </div>
-    </div>
-  </section>
-  <section class="follow-socials">
-    <div class="container-padded centered-socials">
-      <h2 class="socials-title">Follow Our Socials</h2>
-      <div class="socials-wrapper">
-        <img src="images/Instagram_logo.svg.png" class="social-logo" alt="Instagram Logo">
-        <img src="images/Facebook_Logo_2019.svg.png" class="social-logo" alt="Facebook Logo">
-        <img src="images/YouTube_Logo_2017.svg.png" class="social-logo" alt="YouTube Logo">
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
   <footer class="page-footer">
     <div class="container-padded">
       <div class="footer-content">
         <div class="footer-block">
-          <div class="title-small">Contact Us</div>
-          <a class="nav-link" href="#">Email</a>
-          <a class="nav-link" href="#">Social Media</a>
+          <h4 class="title-small">Contact Us</h4>
+          <a href="#" class="nav-link">Email</a>
+          <a href="#" class="nav-link">Social Media</a>
         </div>
         <div class="footer-block">
-          <div class="title-small">Resources</div>
-          <a class="nav-link" href="#">Link 1</a>
-          <a class="nav-link" href="#">Link 2</a>
-          <a class="nav-link" href="#">Link 3</a>
+          <h4 class="title-small">Resources</h4>
+          <a href="#" class="nav-link">Link 1</a>
+          <a href="#" class="nav-link">Link 2</a>
+          <a href="#" class="nav-link">Link 3</a>
         </div>
         <div class="footer-block">
-          <div class="title-small">About</div>
+          <h4 class="title-small">About</h4>
           <a href="#" class="nav-link">Terms &amp; Conditions</a>
           <a href="#" class="nav-link">Privacy policy</a>
         </div>
       </div>
     </div>
     <div class="footer-divider"></div>
-    <div class="footer-copyright-center">Copyright © 2025 The Social Robot Podcast</div>
+    <p>&copy; 2025 The Social Robot Podcast</p>
   </footer>
-  <script>
-    function scrollLeft() {
-      const container = document.querySelector('.scroll-container');
-      const scrollItems = document.querySelectorAll('.scroll-item');
-      let currentScroll = container.scrollLeft;
-
-      for (let i = scrollItems.length - 1; i >= 0; i--) {
-        if (scrollItems[i].offsetLeft < currentScroll) {
-          container.scrollTo({ left: scrollItems[i].offsetLeft, behavior: 'smooth' });
-          return;
-        }
-      }
-      container.scrollTo({ left: 0, behavior: 'smooth' });
-    }
-
-    function scrollRight() {
-      const container = document.querySelector('.scroll-container');
-      const scrollItems = document.querySelectorAll('.scroll-item');
-      let currentScroll = container.scrollLeft;
-
-      for (let i = 0; i < scrollItems.length; i++) {
-        if (scrollItems[i].offsetLeft > currentScroll) {
-          container.scrollTo({ left: scrollItems[i].offsetLeft, behavior: 'smooth' });
-          return;
-        }
-      }
-      container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const container = document.querySelector('.scroll-container');
-      const scrollItems = document.querySelectorAll('.scroll-item');
-      const containerWidth = container.clientWidth;
-
-      scrollItems.forEach(item => {
-        item.style.maxWidth = `${containerWidth}px`;
-      });
-
-      const burger = document.querySelector('.burger-menu');
-      const navLinks = document.querySelector('.nav-menu-items');
-
-      burger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-      });
-
-      navLinks.addEventListener('transitionend', () => {
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
-      });
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>

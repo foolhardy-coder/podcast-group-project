@@ -4,85 +4,81 @@
   <meta charset="utf-8">
   <title>Contact Us</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with The Social Robot Podcast team.">
+  <meta property="og:title" content="The Social Robot Podcast">
+  <meta property="og:description" content="Get in touch with The Social Robot Podcast team.">
+  <meta property="og:image" content="images/Social-robot-podcast-horizontal-logo-mark.png">
+  <meta property="og:url" content="https://www.socialrobotpodcast.com/contact-us.html">
   <link href="css/group-project-standard.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
-<body class="body">
+<body>
+  <div id="audio-player-container"></div>
   <header class="site-header">
     <div class="container-navbar">
-      <a href="index.html" class="img-logo"><img src="images/Social-robot-podcast-horizontal-logo-mark.png" alt="Social Robot Podcast Logo"></a>
-      <nav role="navigation" class="nav-menu">
-        <div class="burger-menu" style="background-color: blue;">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+      <a href="index.html" class="img-logo" aria-label="Home">
+        <img src="images/Social-robot-podcast-horizontal-logo-mark.png" alt="Social Robot Podcast Logo">
+      </a>
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <div class="burger-menu" aria-label="Toggle Navigation">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <ul role="list" class="nav-menu-items">
+        <ul class="nav-menu-items">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="episodes.html" class="nav-link">Episodes</a></li>
           <li><a href="about-us.html" class="nav-link">About Us</a></li>
           <li><a href="subscribe.html" class="nav-link">Subscribe</a></li>
-          <li><a href="contact-us.html" class="nav-link">Contact Us</a></li>
-          <li><a href="login.html" class="nav-link">Login</a></li>
+          <li><a href="contact-us.html" aria-current="page" class="nav-link">Contact Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <section class="contact-content">
-    <div class="container-padded">
-      <h1>Contact Us</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit" class="button-primary">Send Message</button>
-      </form>
-    </div>
-  </section>
+  <main>
+    <section class="contact-content">
+      <div class="container-padded">
+        <h1 class="centered-text">Contact Us</h1>
+        <p class="centered-text">We'd love to hear from you! Fill out the form below to get in touch.</p>
+        <form class="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+          
+          <button type="submit" class="button-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
   <footer class="page-footer">
     <div class="container-padded">
       <div class="footer-content">
         <div class="footer-block">
-          <div class="title-small">Contact Us</div>
-          <a class="nav-link" href="#">Email</a>
-          <a class="nav-link" href="#">Social Media</a>
+          <h4 class="title-small">Contact Us</h4>
+          <a href="#" class="nav-link">Email</a>
+          <a href="#" class="nav-link">Social Media</a>
         </div>
         <div class="footer-block">
-          <div class="title-small">Resources</div>
-          <a class="nav-link" href="#">Link 1</a>
-          <a class="nav-link" href="#">Link 2</a>
-          <a class="nav-link" href="#">Link 3</a>
+          <h4 class="title-small">Resources</h4>
+          <a href="#" class="nav-link">Link 1</a>
+          <a href="#" class="nav-link">Link 2</a>
+          <a href="#" class="nav-link">Link 3</a>
         </div>
         <div class="footer-block">
-          <div class="title-small">About</div>
+          <h4 class="title-small">About</h4>
           <a href="#" class="nav-link">Terms &amp; Conditions</a>
-          <a href="#" class="nav-link">Privacy policy</a>
+          <a href="#" class="nav-link">Privacy Policy</a>
         </div>
       </div>
     </div>
     <div class="footer-divider"></div>
-    <div class="footer-copyright-center">Copyright © 2025 The Social Robot Podcast</div>
+    <p>&copy; 2025 The Social Robot Podcast</p>
   </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const burger = document.querySelector('.burger-menu');
-      const navLinks = document.querySelector('.nav-menu-items');
-
-      burger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-      });
-
-      navLinks.addEventListener('transitionend', () => {
-        if (navLinks.classList.contains('active')) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = 'auto';
-        }
-      });
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
