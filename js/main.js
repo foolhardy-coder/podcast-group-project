@@ -1,4 +1,4 @@
-// This script handles the functionality of the burger menu, scrollable items, and the audio player.
+// Optimized and commented code for better readability and performance
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize all functionality when the DOM is fully loaded
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Fetch the episodes.html content
+  // Fetch the episodes.html content and populate the scroll container
   fetch("episodes.html")
     .then((response) => {
       if (!response.ok) {
@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Add the three most recent episodes to the scroll container
       recentEpisodes.forEach((episode) => {
-        const episodeClone = episode.cloneNode(true);
-        scrollContainer.appendChild(episodeClone);
+        const episodeClone = episode.cloneNode(true); // Clone the episode element
+        scrollContainer.appendChild(episodeClone); // Append the cloned element
       });
     })
     .catch((error) => {
@@ -64,7 +64,7 @@ function setupBurgerMenu() {
   }
 }
 
-// Update the setupScrollFunctionality function to ensure cloned buttons work
+// Function to set up scroll functionality for the container
 function setupScrollFunctionality() {
   const container = document.querySelector('.scroll-container');
 
@@ -86,25 +86,21 @@ function setupScrollFunctionality() {
       });
     }
 
-    // Add event listeners to cloned buttons in the scroll container
+    // Add event listeners to buttons in the scroll container
     container.addEventListener('click', (event) => {
       if (event.target.classList.contains('button-primary')) {
         event.preventDefault(); // Prevent default link behavior
 
-        const buttonIndex = Array.from(container.querySelectorAll('.button-primary')).indexOf(event.target);
-        const audioFiles = [
-          'audio/Episode_116_Tanja_Katharina_Kaiser.mp3', // Audio file for Episode 1
-          'audio/Episode_115_Benjamin_Mottis.mp3', // Audio file for Episode 2
-          'audio/Episode_114_Josie_Gotz.mp3', // Audio file for Episode 3
-        ];
+        // Fetch the audio file from the button's data-src attribute
+        const audioSrc = event.target.dataset.src;
 
-        if (audioPlayer && audioFiles[buttonIndex]) {
+        if (audioPlayer && audioSrc) {
           // Update the audio source and play the selected file
-          audioPlayer.src = audioFiles[buttonIndex];
+          audioPlayer.src = audioSrc;
           audioPlayer.play();
 
           // Save the selected audio file and playback state to localStorage
-          localStorage.setItem('audioSrc', audioFiles[buttonIndex]);
+          localStorage.setItem('audioSrc', audioSrc);
           localStorage.setItem('audioPlaying', true);
           localStorage.setItem('audioTime', 0); // Reset playback position for the new file
         }
@@ -113,7 +109,7 @@ function setupScrollFunctionality() {
   }
 }
 
-// Adjust the audio player to increase the size of the slider bar and organize the layout
+// Function to initialize the audio player
 function initializeAudioPlayer() {
   audioPlayer = document.getElementById('audio-player');
 
@@ -164,8 +160,9 @@ function initializeAudioPlayer() {
   const isPlaying = localStorage.getItem('audioPlaying') === 'true';
 
   if (savedSrc) {
-    audioPlayer.src = savedSrc; // Restore the audio source
-    const fileName = savedSrc.split('/').pop(); // Extract the file name from the path
+    const audioFilePath = savedSrc.startsWith('audio/') ? savedSrc : `audio/${savedSrc}`; // Ensure the correct path to the audio folder
+    audioPlayer.src = audioFilePath; // Restore the audio source
+    const fileName = audioFilePath.split('/').pop(); // Extract the file name from the path
     document.getElementById('audio-file-name').textContent = fileName; // Update the file name display
   }
 
@@ -180,7 +177,7 @@ function initializeAudioPlayer() {
   // Save state during playback
   audioPlayer.addEventListener('timeupdate', () => {
     localStorage.setItem('audioTime', audioPlayer.currentTime); // Save the current playback position
-    localStorage.setItem('audioSrc', audioPlayer.src); // Save the current audio source
+    localStorage.setItem('audioSrc', audioPlayer.src.replace(/^.*[\\\/]/, '')); // Save the current audio source (file name only)
   });
 
   // Update the file name display when the source changes
@@ -193,30 +190,28 @@ function initializeAudioPlayer() {
   window.addEventListener('beforeunload', () => {
     localStorage.setItem('audioTime', audioPlayer.currentTime); // Save the current playback position
     localStorage.setItem('audioPlaying', !audioPlayer.paused); // Save whether the audio is playing
-    localStorage.setItem('audioSrc', audioPlayer.src); // Save the current audio source
+    localStorage.setItem('audioSrc', audioPlayer.src.replace(/^.*[\\\/]/, '')); // Save the current audio source (file name only)
   });
 }
 
-// Function to handle button clicks and play specific audio files
+// Function to set up episode buttons to play audio files
 function setupEpisodeButtons() {
   const episodeButtons = document.querySelectorAll('.button-primary');
-  const audioFiles = [
-    'audio/Daniel_Veesey_-_02_-_Sonata_No_1_in_F_Minor_Op_2_No_1_-_II_Adagio-1(chosic.com).mp3',
-    'audio/Daniel_Veesey_-_Sonata_No_22_in_F_Major_Op_54_-_I_In_tempo_dun_Menuetto(chosic.com).mp3',
-    'audio/Karine_Gilanyan_-_Beethoven_-_Piano_Sonata_nr15_in_D_major_op28_Pastoral_-_IV_Rondo_Allegro_ma_non_troppo(chosic.com).mp3',
-  ];
 
-  episodeButtons.forEach((button, index) => {
+  episodeButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
       event.preventDefault(); // Prevent default link behavior
 
-      if (audioPlayer && audioFiles[index]) {
+      // Fetch the audio file from the button's data-src attribute
+      const audioSrc = button.dataset.src;
+
+      if (audioPlayer && audioSrc) {
         // Update the audio source and play the selected file
-        audioPlayer.src = audioFiles[index];
+        audioPlayer.src = audioSrc;
         audioPlayer.play();
 
         // Save the selected audio file and playback state to localStorage
-        localStorage.setItem('audioSrc', audioFiles[index]);
+        localStorage.setItem('audioSrc', audioSrc);
         localStorage.setItem('audioPlaying', true);
         localStorage.setItem('audioTime', 0); // Reset playback position for the new file
       }
